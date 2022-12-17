@@ -2,6 +2,7 @@ import {
 	Body,
 	Controller,
 	Get,
+	Param,
 	Post,
 	UsePipes,
 	ValidationPipe
@@ -27,5 +28,10 @@ export class QuestionController {
 	@Get()
 	findAll() {
 		return this.questionService.findAll()
+	}
+
+	@Get(':id')
+	getQuizById(@Param('id') id: number) {
+		return this.questionService.findQuestionById(id)
 	}
 }

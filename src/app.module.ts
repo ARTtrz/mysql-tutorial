@@ -15,7 +15,8 @@ import { QuizModule } from './quiz/quiz.module'
 			password: 'Artyom_2006',
 			database: 'project_1',
 			entities: [__dirname + '/**/*.entity{.ts,.js}'],
-			synchronize: true
+			synchronize: true,
+			logging: true
 		})
 	],
 	controllers: [],

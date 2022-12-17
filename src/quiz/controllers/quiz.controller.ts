@@ -10,6 +10,7 @@ import {
 import { QuizService } from '../services/quiz.service'
 import { CreateQuizDto } from '../dto/create-quiz.dto'
 import { UpdateQuizDto } from '../dto/update-quiz.dto'
+import { Quiz } from '../entities/quiz.entity'
 
 @Controller('quiz')
 export class QuizController {
@@ -26,8 +27,8 @@ export class QuizController {
 	}
 
 	@Get()
-	findAll() {
-		return this.quizService.findAll()
+	findAll(): Promise<Quiz[]> {
+		return this.quizService.getAllQuiz()
 	}
 
 	@Patch(':id')

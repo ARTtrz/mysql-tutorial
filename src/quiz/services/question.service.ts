@@ -27,7 +27,17 @@ export class QuestionService {
 		return newQuestion
 	}
 
+	async findQuestionById(id: number): Promise<Question> {
+		return await this.questionRepository.findOne({
+			where: {
+				id: id
+			},
+			relations: ['options']
+		})
+	}
 	async findAll() {
-		return await this.questionRepository.find()
+		return await this.questionRepository.find({
+			relations: ['options']
+		})
 	}
 }
