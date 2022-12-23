@@ -5,11 +5,13 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { AppService } from './app.service'
 import { typeOrmAsyncConfig } from './config/typeorm.config'
 import { QuizModule } from './quiz/quiz.module'
+import { UserModule } from './user/user.module'
 
 @Module({
 	imports: [
-		ConfigModule.forRoot(),
+		ConfigModule.forRoot({ isGlobal: true }),
 		QuizModule,
+		UserModule,
 		// TypeOrmModule.forRoot({
 		// 	type: 'mysql',
 		// 	host: 'localhost',

@@ -24,11 +24,11 @@ export class QuizService {
 
 	findAll() {
 		return this.quizRepository.find({
-			order: {
-				questions: {
-					question: 'ASC'
-				}
-			},
+			// order: {
+			// 	questions: {
+			// 		question: 'ASC'
+			// 	}
+			// },
 			relations: ['questions']
 		})
 	}
